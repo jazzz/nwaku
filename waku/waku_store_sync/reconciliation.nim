@@ -81,7 +81,10 @@ proc messageIngress*(
     error "failed to insert new message", msg_hash = $id.hash.toHex(), error = $error
 
 proc messageIngress*(
-    self: SyncReconciliation, msgHash: WakuMessageHash, msg: WakuMessage
+    self: SyncReconciliation,
+    pubsubTopic: PubsubTopic,
+    msgHash: WakuMessageHash,
+    msg: WakuMessage,
 ) =
   if msg.ephemeral:
     return

@@ -217,7 +217,7 @@ proc mountStoreSync*(
     storeSyncInterval = 300,
     storeSyncRelayJitter = 20,
 ): Future[Result[void, string]] {.async.} =
-  let idsChannel = newAsyncQueue[SyncID](0)
+  let idsChannel = newAsyncQueue[(SyncID, PubsubTopic, ContentTopic)](0)
   let wantsChannel = newAsyncQueue[(PeerId, WakuMessageHash)](0)
   let needsChannel = newAsyncQueue[(PeerId, WakuMessageHash)](0)
 
