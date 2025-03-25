@@ -82,8 +82,8 @@ proc messageIngress*(
 
 proc messageIngress*(
     self: SyncReconciliation,
-    pubsubTopic: PubsubTopic,
     msgHash: WakuMessageHash,
+    pubsubTopic: PubsubTopic,
     msg: WakuMessage,
 ) =
   if msg.ephemeral:
