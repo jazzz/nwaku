@@ -184,7 +184,6 @@ suite "Waku Sync: reconciliation":
       idsChannel,
       localWants,
       remoteNeeds,
-      2,
       @["/waku/2/rs/2/1", "/waku/2/rs/2/2", "/waku/2/rs/2/3", "/waku/2/rs/2/4"],
     )
 
@@ -193,7 +192,6 @@ suite "Waku Sync: reconciliation":
       idsChannel,
       localWants,
       remoteNeeds,
-      2,
       @["/waku/2/rs/2/3", "/waku/2/rs/2/4", "/waku/2/rs/2/5", "/waku/2/rs/2/6"],
     )
 
