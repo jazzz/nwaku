@@ -13,12 +13,8 @@ EXPOSE 30303 60000 8545
 
 # Referenced in the binary
 RUN apt-get update &&\
-    apt-get install -y libpcre2-8-0 libpq-dev curl iproute2 wget dnsutils &&\
+    apt-get install -y libpq-dev curl iproute2 wget dnsutils &&\
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Fix for binaries that still look for legacy PCRE v3 soname
-# libpcre2-8-0 provides libpcre2-8.so.0; we symlink it to the expected name
-RUN ln -s /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0 /usr/lib/libpcre.so.3
 
 # Copy to separate location to accomodate different MAKE_TARGET values
 ADD ./build/$MAKE_TARGET /usr/local/bin/
