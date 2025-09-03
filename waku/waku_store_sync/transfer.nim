@@ -6,6 +6,7 @@ import
   chronicles,
   chronos,
   metrics,
+  tables,
   libp2p/utility,
   libp2p/protocols/protocol,
   libp2p/stream/connection,
